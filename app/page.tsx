@@ -9,7 +9,7 @@ const Home = async () => {
   return (
     <main className="flex min-h-screen flex-col items-center bg-white font-roboto m-10">
       <Header />
-{/*       <Plans plans={plans} categories={categories} /> */}
+      <Plans plans={plans} categories={categories} />
     </main>
   );
 };
