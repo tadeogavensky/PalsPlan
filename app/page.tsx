@@ -18,20 +18,8 @@ const Home = async () => {
 };
 
 const getPlans = async () => {
-  const apiUrl = process.env.API_URL;
-
-  if (!apiUrl) {
-    console.error("API_URL is not defined");
-    return [];
-  }
-
-  console.log("apiUrl PLANS:>> ", apiUrl);
-
   try {
-    const response = await axios.get(
-      `https://pals-plan.vercel.app/api/plans`,
-      {}
-    );
+    const response = await axios.get(`https://pals-plan.vercel.app/api/plans`);
     console.log("response.data :>> ", response.data);
     return response.data;
   } catch (error) {
@@ -41,19 +29,9 @@ const getPlans = async () => {
 };
 
 const getCategories = async () => {
-  const apiUrl = process.env.API_URL;
-
-  if (!apiUrl) {
-    console.error("API_URL is not defined");
-    return [];
-  }
-
-  console.log("apiUrl CATEGORIES :>> ", apiUrl);
-
   try {
     const response = await axios.get(
-      `https://pals-plan.vercel.app/api/categories`,
-      {}
+      `https://pals-plan.vercel.app/api/categories`
     );
     console.log("response.data :>> ", response.data);
     return response.data;
