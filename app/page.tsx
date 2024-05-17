@@ -29,14 +29,8 @@ const getPlans = async () => {
 
   try {
     const response = await axios.get(
-      `https://pals-plan-fhxwywlot-tadeogavensky1s-projects.vercel.app/api/plans`,
-      {
-        headers: {
-          Authorization:
-            "Bearer " +
-            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBnenBlY29ybmlhbHNucmh0Y3h0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTU5NzU5OTgsImV4cCI6MjAzMTU1MTk5OH0.ZAxHkMB81oq5SLNchFKT-Rl26j_ca60YMjHYIJHnpx4",
-        },
-      }
+      `https://pals-plan.vercel.app/api/plans`,
+      {}
     );
     console.log("response.data :>> ", response.data);
     return response.data;
@@ -58,14 +52,8 @@ const getCategories = async () => {
 
   try {
     const response = await axios.get(
-      `https://pals-plan-fhxwywlot-tadeogavensky1s-projects.vercel.app/api/categories`,
-      {
-        headers: {
-          Authorization:
-            "Bearer " +
-            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBnenBlY29ybmlhbHNucmh0Y3h0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTU5NzU5OTgsImV4cCI6MjAzMTU1MTk5OH0.ZAxHkMB81oq5SLNchFKT-Rl26j_ca60YMjHYIJHnpx4",
-        },
-      }
+      `https://pals-plan.vercel.app/api/categories`,
+      {}
     );
     console.log("response.data :>> ", response.data);
     return response.data;
