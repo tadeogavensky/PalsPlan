@@ -8,6 +8,7 @@ export async function GET() {
         Category: true,
       },
     });
+    console.log('plans :>> ', plans);
 
     return NextResponse.json(plans);
   } catch (error) {

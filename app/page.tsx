@@ -20,7 +20,7 @@ const Home = async () => {
 const getPlans = async () => {
   try {
     const response = await axios.get(`https://pals-plan.vercel.app/api/plans`);
-    console.log("response.data :>> ", response.data);
+    console.log("PLANS:>> ", response.data);
     return response.data;
   } catch (error) {
     console.error("Error fetching plans", error);
