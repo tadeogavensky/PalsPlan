@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "build": {
+    "env": {
+      "DATABASE_URL": "postgres://postgres.pgzpecornialsnrhtcxt:bethilel1plans@aws-0-us-east-1.pooler.supabase.com:5432/postgres",
+
+      "NEXT_PUBLIC_SUPABASE_URL": "https://pgzpecornialsnrhtcxt.supabase.co",
+      "NEXT_PUBLIC_SUPABASE_ANON_KEY": "https://pgzpecornialsnrhtcxt.supabase.co"
+    }
+  }
+}
