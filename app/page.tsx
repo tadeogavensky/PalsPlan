@@ -23,12 +23,23 @@ const getPlans = async () => {
     apiUrl = process.env.API_URL;
   }
 
-  console.log('apiUrl PLANS:>> ', apiUrl);
+  console.log("apiUrl PLANS:>> ", apiUrl);
 
   try {
-    const response = await axios.get(`${apiUrl}/api/plans`);
-    console.log('response.data :>> ', response.data);
-    return response.data;
+    const apiUrl = "https://pals-plan.vercel.app"; // Asegúrate de que apiUrl esté definido
+
+    const response = await fetch(`${apiUrl}/api/plans`);
+
+    if (!response.ok) {
+      // Maneja el error si la respuesta no es exitosa
+      console.error("Error al obtener las categorías:", response.statusText);
+      return;
+    }
+
+    const data = await response.json(); // Lee el cuerpo de la respuesta como JSON
+    console.log("response.data :>> ", data);
+
+    return data;
   } catch (error) {
     console.error(`Error fetching plans`, error);
   }
@@ -42,13 +53,23 @@ const getCategories = async () => {
     apiUrl = process.env.API_URL;
   }
 
-  console.log('apiUrl CATEGORIES :>> ', apiUrl);
+  console.log("apiUrl CATEGORIES :>> ", apiUrl);
 
   try {
-    const response = await axios.get(`${apiUrl}/api/categories`);
-    console.log('response.data :>> ', response.data);
-    return response.data;
+    const apiUrl = "https://pals-plan.vercel.app"; // Asegúrate de que apiUrl esté definido
 
+    const response = await fetch(`${apiUrl}/api/categories`);
+
+    if (!response.ok) {
+      // Maneja el error si la respuesta no es exitosa
+      console.error("Error al obtener las categorías:", response.statusText);
+      return;
+    }
+
+    const data = await response.json(); // Lee el cuerpo de la respuesta como JSON
+    console.log("response.data :>> ", data);
+
+    return data;
   } catch (error) {
     console.error(`Error fetching categories`, error);
   }
