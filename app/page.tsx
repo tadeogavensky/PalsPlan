@@ -1,3 +1,4 @@
+// PAGE TSX
 "use client";
 
 import Header from "@/components/Header";
@@ -11,13 +12,13 @@ const Home = async () => {
   return (
     <main className="flex min-h-screen flex-col items-center bg-white font-roboto m-10">
       <Header />
-        <Plans plans={plans} categories={categories} />
+      <Plans plans={plans} categories={categories} />
     </main>
   );
 };
 
 const getPlans = async () => {
-  let apiUrl = process.env.API_URL;
+  const apiUrl = process.env.API_URL;  // Correct usage of process.env
 
   console.log("apiUrl PLANS:>> ", apiUrl);
 
@@ -31,7 +32,7 @@ const getPlans = async () => {
 };
 
 const getCategories = async () => {
-  let apiUrl = process.env.API_URL;
+  const apiUrl = process.env.API_URL;  // Correct usage of process.env
 
   console.log("apiUrl CATEGORIES :>> ", apiUrl);
 
