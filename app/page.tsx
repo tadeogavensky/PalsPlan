@@ -26,7 +26,7 @@ const getPlans = async () => {
   console.log('apiUrl PLANS:>> ', apiUrl);
 
   try {
-    const response = await axios.get(`${apiUrl}/api/plans`);
+    const response = await axios.get(`${apiUrl}api/plans`);
     console.log('response.data :>> ', response.data);
     return response.data;
   } catch (error) {
@@ -45,7 +45,7 @@ const getCategories = async () => {
   console.log('apiUrl CATEGORIES :>> ', apiUrl);
 
   try {
-    const response = await axios.get(`${apiUrl}/api/categories`);
+    const response = await axios.get(`${apiUrl}api/categories`);
     console.log('response.data :>> ', response.data);
     return response.data;
 
