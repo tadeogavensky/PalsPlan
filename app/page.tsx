@@ -18,31 +18,44 @@ const Home = async () => {
 };
 
 const getPlans = async () => {
-  const apiUrl = process.env.API_URL;  // Correct usage of process.env
+  const apiUrl = process.env.API_URL;
+
+  if (!apiUrl) {
+    console.error('API_URL is not defined');
+    return [];
+  }
 
   console.log("apiUrl PLANS:>> ", apiUrl);
 
   try {
-    const response = await axios.get(`${apiUrl}/api/plans`);
+    const response = await axios.get(`https://pals-plan-fhxwywlot-tadeogavensky1s-projects.vercel.app/api/plans`);
     console.log("response.data :>> ", response.data);
     return response.data;
   } catch (error) {
-    console.error(`Error fetching plans`, error);
+    console.error('Error fetching plans', error);
+    return [];
   }
 };
 
 const getCategories = async () => {
-  const apiUrl = process.env.API_URL;  // Correct usage of process.env
+  const apiUrl = process.env.API_URL;
+
+  if (!apiUrl) {
+    console.error('API_URL is not defined');
+    return [];
+  }
 
   console.log("apiUrl CATEGORIES :>> ", apiUrl);
 
   try {
-    const response = await axios.get(`${apiUrl}/api/categories`);
+    const response = await axios.get(`https://pals-plan-fhxwywlot-tadeogavensky1s-projects.vercel.app/api/categories`);
     console.log("response.data :>> ", response.data);
     return response.data;
   } catch (error) {
-    console.error(`Error fetching categories`, error);
+    console.error('Error fetching categories', error);
+    return [];
   }
 };
+
 
 export default Home;
