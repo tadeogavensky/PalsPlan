@@ -4,6 +4,7 @@
 import Header from "@/components/Header";
 import Plans from "@/components/Plans";
 import axios from "axios";
+import { env } from "process";
 
 const Home = async () => {
   const plans = await getPlans();
@@ -18,9 +19,10 @@ const Home = async () => {
 };
 
 const getPlans = async () => {
+  let url = env.API_URL;
   try {
-    const response = await axios.get(`https://pals-plan.vercel.app/api/plans`);
-    console.log("PLANS:>> ", response.data);
+    const response = await axios.get(`${url}/api/plans`);
+    console.log("response.data :>> ", response.data);
     return response.data;
   } catch (error) {
     console.error("Error fetching plans", error);
@@ -29,10 +31,10 @@ const getPlans = async () => {
 };
 
 const getCategories = async () => {
+  let url = env.API_URL;
+
   try {
-    const response = await axios.get(
-      `https://pals-plan.vercel.app/api/categories`
-    );
+    const response = await axios.get(`${url}/api/categories`);
     console.log("response.data :>> ", response.data);
     return response.data;
   } catch (error) {
